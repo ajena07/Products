@@ -28,7 +28,7 @@ To update the database schema using Entity Framework Core migrations, follow the
 1. Open Package Manager console.
 2. Run the following command to update the Database schema to the new DB Instance new migration:
 
-    update Database
+    Update-Database
 
 
 ### 3. ID Generation Function
