@@ -28,6 +28,7 @@ namespace ProductsWebAPI.Controllers
         {
             try
             {
+                _logger.LogInformation("GetProducts called");
                 var products = await _repository.GetAllProducts();
 
                 if (products == null || !products.Any())
@@ -38,6 +39,7 @@ namespace ProductsWebAPI.Controllers
             }
             catch (Exception ex)
             {
+                _logger.LogError("Error in GetProducts {0}", ex.Message);
                 return BadRequest(ex.Message);
             }
         }
@@ -62,6 +64,7 @@ namespace ProductsWebAPI.Controllers
             }
             catch (Exception ex)
             {
+                _logger.LogError("Error in GetProductByid {0}", ex.Message);
                 return BadRequest(ex.Message);
             }
         }
@@ -80,6 +83,7 @@ namespace ProductsWebAPI.Controllers
             }
             catch (Exception ex)
             {
+                _logger.LogError("Error in CreateProducts {0}", ex.Message);
                 return BadRequest(ex.Message);
             }
         }
@@ -101,6 +105,7 @@ namespace ProductsWebAPI.Controllers
             }
             catch (Exception ex)
             {
+                _logger.LogError("Error in DeleteProductByid {0}", ex.Message);
                 return BadRequest(ex.Message);
             }
         }
@@ -120,6 +125,7 @@ namespace ProductsWebAPI.Controllers
             }
             catch (Exception ex)
             {
+                _logger.LogError("Error in UpdateProductByid {0}", ex.Message);
                 return BadRequest(ex.Message);
             }
         }
@@ -145,6 +151,7 @@ namespace ProductsWebAPI.Controllers
             }
             catch (Exception ex)
             {
+                _logger.LogError("Error in IncrementStockByProductid {0}", ex.Message);
                 return BadRequest(ex.Message);
             }
         }
@@ -171,6 +178,7 @@ namespace ProductsWebAPI.Controllers
             }
             catch (Exception ex)
             {
+                _logger.LogError("Error in DecrementStockByProductid {0}", ex.Message);
                 return BadRequest(ex.Message);
             }
         }
