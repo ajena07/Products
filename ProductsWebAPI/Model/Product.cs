@@ -15,6 +15,16 @@ namespace ProductsWebAPI.Model
         {
             var results = new List<ValidationResult>();
 
+            if (String.IsNullOrWhiteSpace(ProductName))
+            {
+                results.Add(new ValidationResult("Invalid Product Name"));
+            }
+
+            if (String.IsNullOrWhiteSpace(ProductType))
+            {
+                results.Add(new ValidationResult("Invalid Product Type"));
+            }
+
             if (Quantity <= 0)
             {
                 results.Add(new ValidationResult("Invalid Quantity Value"));
